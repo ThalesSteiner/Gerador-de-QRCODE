@@ -35,22 +35,20 @@ class APPFormsQR:
         # Campo de entrada para o usuário
         Matricula = st.text_area("Digite a sua Matricula:")
         Nome = st.text_area("Digite o seu Nome:")
-        data, hora = self.obter_hora_sao_paulo()
-        Data = f"{data} {hora}"
-        Qrcode_text = f"{Matricula} {Nome} {Data}"
         
         if st.button("Gerar QR Code"):
-            if Qrcode_text:
-                # Gera o QR Code
-                qrcode_img = self.gerar_qrcode(Qrcode_text)
-                buffer = io.BytesIO()
-                qrcode_img.save(buffer, format="PNG")
-                buffer.seek(0)
-                
-                # Exibe o QR Code
-                st.image(buffer, caption="QR Code Gerado", use_column_width=True)
-            else:
-                st.warning("Por favor, insira algum texto para gerar o QR Code.")
+            data, hora = self.obter_hora_sao_paulo()
+            Data = f"{data} {hora}"
+            Qrcode_text = f"{Matricula} {Nome} {Data}"
+            # Gera o QR Code
+            qrcode_img = self.gerar_qrcode(Qrcode_text)
+            buffer = io.BytesIO()
+            qrcode_img.save(buffer, format="PNG")
+            buffer.seek(0)
+            
+            # Exibe o QR Code
+            st.image(buffer, caption="QR Code Gerado", use_column_width=True)
+
 
 app = APPFormsQR()
 
