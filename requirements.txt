@@ -1,0 +1,7 @@
+streamlit==1.36.0
+pandas
+openpyxl
+boto3
+datetime
+streamlit_qrcode_scanner
+qrcode
