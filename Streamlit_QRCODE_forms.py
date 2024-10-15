@@ -39,7 +39,7 @@ class APPFormsQR:
         if st.button("Gerar QR Code"):
             data, hora = self.obter_hora_sao_paulo()
             Data = f"{data} {hora}"
-            Qrcode_text = f"{Matricula} {Nome} {Data}"
+            Qrcode_text = f"{Matricula}/{Nome}/{Data}"
             # Gera o QR Code
             qrcode_img = self.gerar_qrcode(Qrcode_text)
             buffer = io.BytesIO()
