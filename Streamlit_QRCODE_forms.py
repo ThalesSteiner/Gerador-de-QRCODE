@@ -37,9 +37,7 @@ class APPFormsQR:
         Nome = st.text_area("Digite o seu Nome:")
         
         if st.button("Gerar QR Code"):
-            data, hora = self.obter_hora_sao_paulo()
-            Data = f"{data} {hora}"
-            Qrcode_text = f"{Matricula}/{Nome}/{Data}"
+            Qrcode_text = f"{Matricula}/{Nome}"
             print(Qrcode_text)
             # Gera o QR Code
             qrcode_img = self.gerar_qrcode(Qrcode_text)
