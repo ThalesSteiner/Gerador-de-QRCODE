@@ -40,6 +40,7 @@ class APPFormsQR:
             data, hora = self.obter_hora_sao_paulo()
             Data = f"{data} {hora}"
             Qrcode_text = f"{Matricula}/{Nome}/{Data}"
+            print(Qrcode_text)
             # Gera o QR Code
             qrcode_img = self.gerar_qrcode(Qrcode_text)
             buffer = io.BytesIO()
